@@ -13,6 +13,7 @@
 		32F3081F1A93DFF000B3354E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F3081E1A93DFF000B3354E /* Images.xcassets */; };
 		32F308221A93DFF000B3354E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F308201A93DFF000B3354E /* LaunchScreen.xib */; };
 		32F3082E1A93DFF000B3354E /* TemplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F3082D1A93DFF000B3354E /* TemplateTests.m */; };
+		32F308381A93E3A000B3354E /* app in Resources */ = {isa = PBXBuildFile; fileRef = 32F308371A93E3A000B3354E /* app */; };
 		9C0849DA98658415028C544D /* libPods-Template.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 125765EE6871B5D1EDCE76CE /* libPods-Template.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		32F308271A93DFF000B3354E /* TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F3082C1A93DFF000B3354E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32F3082D1A93DFF000B3354E /* TemplateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateTests.m; sourceTree = "<group>"; };
+		32F308371A93E3A000B3354E /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app; path = ../../common/app; sourceTree = "<group>"; };
 		82AC6596DA860492B8297430 /* Pods-Template.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Template/Pods-Template.debug.xcconfig"; sourceTree = "<group>"; };
 		F20B373F6CA19A82365DC3E1 /* Pods-Template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Template.release.xcconfig"; path = "Pods/Target Support Files/Pods-Template/Pods-Template.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 		32F308101A93DFF000B3354E /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				32F308371A93E3A000B3354E /* app */,
 				32F308151A93DFF000B3354E /* AppDelegate.h */,
 				32F308161A93DFF000B3354E /* AppDelegate.m */,
 				32F308181A93DFF000B3354E /* ViewController.h */,
@@ -222,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F308381A93E3A000B3354E /* app in Resources */,
 				32F308221A93DFF000B3354E /* LaunchScreen.xib in Resources */,
 				32F3081F1A93DFF000B3354E /* Images.xcassets in Resources */,
 			);
