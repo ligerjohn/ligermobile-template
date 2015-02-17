@@ -1,0 +1,1 @@
+../../../LigerMobile/LigerMobile/Cordova/LGRLiger.h
