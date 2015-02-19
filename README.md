@@ -15,7 +15,7 @@
 
 * Install the latest non-beta xcode
 * ```git clone https://github.com/ligerjohn/ligermobile-template.git```
-* type ```open iOS/Template.xcworkspace``` in the repo to open the workspace to verify that it loads (if you try to run it will get stuck in an NSAssert since we haven’t added a javascript app yet)
+* Type ```open iOS/Template.xcworkspace``` in the repo to open the workspace to verify that it loads (if you try to run it will get stuck in an NSAssert since we haven’t added a javascript app yet).
 
  
 ### Android
@@ -23,6 +23,8 @@
 TBD
 
 ## Generate the app
+
+In the ```common``` folder in ```ligermobile-template``` create an app.
 
 ```bash
 yo ligermobile
