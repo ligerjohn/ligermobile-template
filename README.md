@@ -153,6 +153,8 @@ Add a bootstrap list group in the template.
 </div>
 ```
 
+Don't forget to run ```gulp``` after you change a page file, such as a template or javascript file. To avoid forgetting, try using ```gulp watch``` that will silently watch for files changing in the background and leap to action when they are.
+
 ### contacts.js
 
 Initialize the template with some data. Just an array of strings in this case, but a real life app would more than likely read the data from a server and then add them in via a template. Since we already have the data we don't need to have a temporary UI in place.
@@ -173,7 +175,6 @@ Initialize the template with some data. Just an array of strings in this case, b
     $('div.list-group a.list-group-item').on('touchend', function() {
       $(this).removeClass('active');
     });
-
   }
 ```
 
@@ -186,10 +187,10 @@ The list is kind of boring though, doesn't do anything. Let's make it open up a 
 Create a contactDetail page for us to open:
 
 ```
-yo ligermobile:page contactDetail page
+yo ligermobile:page contactDetails page
 ```
 
-### contatcs.js
+### contacts.js
 
 And add in an extra ```PAGE.openPage(...)``` to open the page:
 
@@ -204,6 +205,39 @@ And add in an extra ```PAGE.openPage(...)``` to open the page:
       PAGE.openPage('Detail', 'contactDetails', {}, {});
     });
   }
+```
+
+## One more thing
+
+Let's send some data over to the newly opened page!
+
+### contacts.jst
+
+Add in the data-contact-item. This way we save away our data for later.
+
+```
+<div class="list-group">
+  <% _.each(contacts,function(contact){ %>
+  <a class="list-group-item" data-contact-item="<%= escape(JSON.stringify(contact)) %>"><span><%= contact %></span></a>
+  <% }); %>
+</div>
+```
+
+### contacts.js
+
+Grab the data out and include it in the args. Args are meant to send data to a page. Options (the next {}) are options for the page. Options are typically handled by the native implementation, to the point where it's not even sent to the javascript. To access your page's args use ```PAGE.args``` after ```initialize```` has been called.
+
+```javascript
+  addBindings:function() {
+    $('div.list-group a.list-group-item').on('touchstart', function() {
+      $(this).addClass('active').siblings().removeClass('active');
+    });
+
+    $('div.list-group a.list-group-item').on('touchend', function() {
+      $(this).removeClass('active');
+      var contactItem = JSON.parse(unescape($(this).data("contact-item")));
+      PAGE.openPage('Detail', 'contactDetails', {contact:contactItem}, {});
+    });
 ```
 
 ## Done!
