@@ -93,7 +93,7 @@ We now have two new pages that we can use. They are generated so they don't do m
 
 ## Modify app.json
 
-Having two new pages that you can't see isn't terribly interesting. So let's do something with them. Let's add them to the tab.
+Having two new pages that you can't see isn't terribly interesting. So let's do something with them. Let's add them to the tab. You can find ```app.json``` in the app folder.
 
 You start out with:
 
@@ -173,13 +173,15 @@ And end up with:
 
 Restarting the app (pressing the run play button again) should now get you four tabs instead of two. The ```app.json``` is the root of your app. It describes what page your app should start with as well as some info about colors. If you look at your own file you see that there's a pattern in the json. ```args``` of certain types pages tends to contain other pages. In this case the tabsContainer contains a tab page, which contains a list ("pages" above) of pages. These are the pages you see as "tabs". Try tapping on them and you should see that different pages are displayed.
 
+The tabs will display in the same order as in the array, and if you want to look at how it's done (after finishing this little tutorial) take a look at ```tabs.html```, ```tabs.js```, and ```tabs.jst```. That's right, the tabs are all in html!
+
 ## List of contacts
 
-Let's put something on the contacts page, make it a bit more interesting. How about a list of contacts?
+Let's put something on the contacts page, make it a bit more interesting. How about a list of contacts? You will find all these files under the ```pages``` folders under the name of each page.
 
 ### contacts.jst
 
-Replace the content of the template with a bootstrap list group:
+Completely replace the content of the template (jst files are templates, in the same common format used by lodash and others) with a bootstrap list group:
 
 ```
 <div class="list-group">
@@ -196,6 +198,8 @@ What we have here is a template. It gets compiled into javascript by ```gulp``` 
 ### contacts.js
 
 Time to initialize the template with some data. Just an array of strings in this case, but a real life app would more than likely read the data from a server and then add them in via a template. Since we already have the data we don't need to have a temporary UI in place letting our esteemed users that data is forthcoming.
+
+Rewrite the ```initialize``` function as below and add the ```addBindings``` function:
 
 ```javascript
   initialize: function() {
